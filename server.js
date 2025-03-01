@@ -1,7 +1,7 @@
 import { createServer } from 'node:http';
 import { Server } from 'socket.io';
-import * as apiServer from './api.js';
-import * as sockets from './sockets.js';
+import { default as apiServer } from './api.js';
+import * as socket from './sockets.js';
 
 const httpServer = createServer(apiServer);
 const socketServer = new Server(httpServer, {
@@ -14,4 +14,4 @@ const socketServer = new Server(httpServer, {
 const PORT = 3000;
 httpServer.listen(PORT, () => console.log(`Listening on port ${PORT}`));
 
-sockets.listen(socketServer);
+socket.listen(socketServer);

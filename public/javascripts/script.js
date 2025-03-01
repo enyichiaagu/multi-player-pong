@@ -3,7 +3,7 @@ import { io } from 'https://cdn.socket.io/4.8.1/socket.io.esm.min.js';
 // Canvas Related
 const canvas = document.createElement('canvas');
 const context = canvas.getContext('2d');
-const socket = io();
+const socket = io('/pong');
 let isReferee = false;
 let paddleIndex = 0;
 
